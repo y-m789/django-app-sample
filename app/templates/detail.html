@@ -1,0 +1,83 @@
+{% extends "./base.html" %}
+{% block title %}
+    情報の詳細表示
+{% endblock title %}
+{% block content %}
+<div class="container">
+
+    <h2 class="text-center">情報の詳細表示</h2>
+    <br>
+
+    {% for i in infor %}
+    <div class="row">
+        <div class="col-3">
+            <p>名前</p>
+        </div>
+        <div class="col-9">
+            {{ i.name }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <p>E-mail</p>
+        </div>
+        <div class="col-9">
+            {{ i.email }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <p>年齢</p>
+        </div>
+        <div class="col-9">
+            {{ i.age }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <p>性別</p>
+        </div>
+        <div class="col-9">
+            {{ i.get_sex_display }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <p>メモ</p>
+        </div>
+        <div class="col-9">
+            {{ i.memo }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <p>登録ユーザー</p>
+        </div>
+        <div class="col-9">
+            {{ i.user }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <p>登録日</p>
+        </div>
+        <div class="col-9">
+            {{ i.created_at }}
+        </div>
+    </div>
+<br>
+<a href="{% url 'edit' i.pk %}" class="btn btn-primary">修正</a>
+<a href="{% url 'list' %}" class="btn btn-secondary btn-sm">戻る</a>
+<div class="float-right">
+    <a href="{% url 'delete' i.pk %}" class="btn btn-danger">削除</a>
+</div>
+
+</div>
+{% endfor %}
+{% endblock %}

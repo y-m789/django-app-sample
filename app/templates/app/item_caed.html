@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-3">
+        <p>名前</p>
+    </div>
+    <div class="col-9">
+        <p>{{ Information.name }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <p>E-mail</p>
+    </div>
+    <div class="col-9">
+        <p>{{ Information.email }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <p>年齢</p>
+    </div>
+    <div class="col-9">
+        <p>{{ Information.age }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <p>性別</p>
+    </div>
+    <div class="col-9">
+        <p>{{ Information.get_sex_display }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <p>メモ</p>
+    </div>
+    <div class="col-9">
+        <p>{{ Information.memo|linebreaksbr }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <p>登録日</p>
+    </div>
+    <div class="col-9">
+        <p>{{ Information.created_at|date:"Y/m/d G:i:s" }}</p>
+    </div>
+</div>

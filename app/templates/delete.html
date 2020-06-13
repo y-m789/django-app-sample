@@ -1,0 +1,83 @@
+{% extends "./base.html" %}
+{% block title %}
+    情報の削除
+{% endblock title %}
+{% block content %}
+
+<div class="float-right">
+    <a href="{% url 'list' %}" class="btn btn-secondary btn-sm" >戻る</a>
+</div>
+
+<div class="container">
+    <h2 class="text-center">削除確認画面</h2>
+    <br>
+<form method="post">
+{% csrf_token %}
+    <div class="row">
+        <div class="col-3">
+            <p>名前</p>
+        </div>
+        <div class="col-9">
+            {{ object.name }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <p>E-mail</p>
+        </div>
+        <div class="col-9">
+            {{ object.email }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <p>年齢</p>
+        </div>
+        <div class="col-9">
+            {{ object.age }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <p>性別</p>
+        </div>
+        <div class="col-9">
+            {{ object.get_sex_display }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <p>メモ</p>
+        </div>
+        <div class="col-9">
+            {{ object.memo }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <p>登録ユーザー</p>
+        </div>
+        <div class="col-9">
+            {{ object.user }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <p>登録日</p>
+        </div>
+        <div class="col-9">
+            {{ object.created_at }}
+        </div>
+    </div>
+<br>
+<p>本当に削除しますか?</p>
+<input type="submit" value="削除する">
+</form>
+</div>
+{% endblock %}

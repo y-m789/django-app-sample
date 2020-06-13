@@ -1,0 +1,32 @@
+{% extends "./base.html" %}
+{% block title %}
+    情報の一覧表示
+{% endblock title %}
+{% block content %}
+<div class="container">
+    <h2 class="text-center">情報の一覧表示</h2>
+<!--    <a href="{% url 'register' %}" class="btn btn-secondary">追加</a>-->
+    <table class="table table-striped table-bordered">
+    <br>
+    <thead>
+        <tr>
+            <th scope="col">名前</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for i in infor %}
+    <tr>
+        <th scope="row">
+            {{ i.name }}
+        </th>
+        <td>
+            <a href="{% url 'detail' i.pk %}" class="btn btn-outline-secondary">詳細</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+</div>
+{% endblock %}
